@@ -10,14 +10,13 @@ public class Zimmerei
 	}
 
 	//ASSERT: Lager l must not be NULL!
-	public setLager (Lager l)
+	public void setLager (Lager l)
 	{
 		this.lager = l;
 	}
 	//ASSERT: Dachstuhl dachst must not be NULL!
 	public Dachstuhl construct(Dachstuhl dachst)
 	{
-		dachst.bauholzMaterial.size()
 
 		while (dachst.bauholzMaterial.size() > 0)
 		{
@@ -34,8 +33,6 @@ public class Zimmerei
 				}
 				this.lager.bauholzLager = new LinkedList<Bauholz>();
 			}
-
-			//this.dachst.add
 
 		}
 
