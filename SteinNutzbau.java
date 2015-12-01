@@ -14,6 +14,13 @@ public class SteinNutzbau extends Steinbau{
 				}
 			}
 		}
+		for(Bauholz bauholz : bauholzLager){
+			if(bauholz.isSuitableForSteinbau() && bauholz.isSuitableForWohnbau()){
+				if(bauholz.laenge() >= this.laenge()){
+					return bauholz;
+				}
+			}
+		}
 		return null;
 	}
 }
