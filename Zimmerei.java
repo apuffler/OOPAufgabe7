@@ -37,6 +37,7 @@ public class Zimmerei
 					this.lager.add(r);
 				}
 				dachst.getBauholzList().clear();
+				return null;
 			}
 
 			this.lager.add(b);
