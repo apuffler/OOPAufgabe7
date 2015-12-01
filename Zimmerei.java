@@ -16,7 +16,7 @@ public class Zimmerei
 		this.lager = l;
 	}
 	//ASSERT: Dachstuhl dachst must not be NULL!
-	public Dachstuhl construct(Dachstuhl dachst)
+	public boolean construct(Dachstuhl dachst)
 	{
 
 
@@ -25,11 +25,10 @@ public class Zimmerei
 		
 		while (!dachst.isFinished())
 		{
-			
 			Bauholz b = this.lager.get(dachst);
 
 			//Dachstuhl couldn't be finished, return all material.
-			if(b == null ) // && !this.dachst.isFinished 
+			if(b == null )
 			{
 				//Return all the Bauholz
 				for (Bauholz r : dachstList)
@@ -37,16 +36,15 @@ public class Zimmerei
 					this.lager.add(r);
 				}
 				dachst.getBauholzList().clear();
-				return null;
+				return false;
 			}
 
 			this.lager.add(b);
 
 		}
 
-
 		//Finished 
-		return dachst;
+		return true;
 
 	}
 
