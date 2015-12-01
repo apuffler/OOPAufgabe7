@@ -5,6 +5,14 @@ public abstract class Dachstuhl {
 	protected int laenge;
 	protected int neededBauholzAmount;
 	
+
+	public int getNeededBauholzAmount ()
+	{
+		return this.neededBauholzAmount;
+	}
+
+
+	//ASSERT: int laenge must be >= 0, int bholzAmount must be >= 0
 	public Dachstuhl(int laenge, int bholzAmount){
 		this.bauholzMaterial = new LinkedList<Bauholz>();
 		this.laenge = laenge;
@@ -27,6 +35,7 @@ public abstract class Dachstuhl {
 		System.out.println("Der Preis fuer diesen Dachstuhl betraegt " + preis + " cm");
 	}
 	
+	//ASSERT: Bauholz b must not be NULL
 	public void add(Bauholz b){
 		this.bauholzMaterial.add(b);
 	}
@@ -43,5 +52,6 @@ public abstract class Dachstuhl {
 		return this.bauholzMaterial.size() == this.neededBauholzAmount;
 	}
 
+	//ASSERT: LinkedList<Bauholz> bauholzLager must not be NULL
 	public abstract Bauholz getSuitableBauholz(LinkedList<Bauholz> bauholzLager);
 }
