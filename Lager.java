@@ -18,6 +18,7 @@ public class Lager {
 		int holzCounter = 1;
 		for(Bauholz b : this.bauholzLager){
 			System.out.println("Laenge des "+holzCounter+".Holzstueckes: "+b.laenge());
+			++holzCounter;
 		}
 	}
 	
