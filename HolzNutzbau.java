@@ -14,6 +14,13 @@ public class HolzNutzbau extends Holzbau{
 				}
 			}
 		}
+		for(Bauholz bauholz : bauholzLager){
+			if(bauholz.isSuitableForHolzbau() && bauholz.isSuitableForWohnbau()){
+				if(bauholz.laenge() >= this.laenge()){
+					return bauholz;
+				}
+			}
+		}
 		return null;
 	}
 }
