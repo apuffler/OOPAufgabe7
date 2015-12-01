@@ -20,9 +20,21 @@ public class Zimmerei
 	{
 
 
-		LinkedList<Bauholz> lagerList = this.lager.getBauholzVorrat();
+		int lagerSize = this.lager.getBauholzVorrat().size();
+
+		int dachstNeeded = dachst.getNeededBauholzAmount();
+
 		LinkedList<Bauholz> dachstList = dachst.getBauholzList();
 		
+
+		//Not enough pieces available.
+		if (lagerSize < dachstNeeded)
+		{
+			return false;
+		}
+
+
+
 		while (!dachst.isFinished())
 		{
 			Bauholz b = this.lager.get(dachst);
