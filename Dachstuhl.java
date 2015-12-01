@@ -3,16 +3,18 @@ import java.util.LinkedList;
 public abstract class Dachstuhl {
 	protected LinkedList<Bauholz> bauholzMaterial;
 	protected int laenge;
+	protected int neededBauholzAmount;
 	
-	public Dachstuhl(int laenge){
+	public Dachstuhl(int laenge, int bholzAmount){
 		this.bauholzMaterial = new LinkedList<Bauholz>();
 		this.laenge = laenge;
+		this.neededBauholzAmount = bholzAmount;
 	}
 	
 	public void list(){
 		int holzCounter = 1;
 		for(Bauholz b : this.bauholzMaterial){
-			System.out.println("Länge des "+holzCounter+".Holzstückes: "+b.laenge());
+			System.out.println("Laenge des "+holzCounter+".Holzstueckes: "+b.laenge());
 		}
 	}
 	
@@ -22,7 +24,7 @@ public abstract class Dachstuhl {
 			preis += b.preis();
 		}
 		
-		System.out.println("Der Preis für diesen Dachstuhl beträgt " + preis + " €");
+		System.out.println("Der Preis für diesen Dachstuhl beträgt " + preis + " cm");
 	}
 	
 	public void add(Bauholz b){
@@ -31,6 +33,14 @@ public abstract class Dachstuhl {
 	
 	public int laenge(){
 		return this.laenge;
+	}
+
+	public LinkedList<Bauholz> getBauholzList(){
+		return this.bauholzMaterial;
+	}
+
+	public boolean isFinished(){
+		return this.bauholzMaterial.size() == this.neededBauholzAmount;
 	}
 
 	public abstract Bauholz getSuitableBauholz(LinkedList<Bauholz> bauholzLager);
