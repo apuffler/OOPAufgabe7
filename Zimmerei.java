@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 public class Zimmerei
 {
 	
@@ -18,7 +19,11 @@ public class Zimmerei
 	public Dachstuhl construct(Dachstuhl dachst)
 	{
 
-		while (dachst.bauholzMaterial.size() > 0)
+
+		LinkedList<Bauholz> lagerList = this.lager.getBauholzVorrat();
+		LinkedList<Bauholz> dachstList = dachst.getBauholzList();
+		
+		while (!dachst.isFinished())
 		{
 			
 			Bauholz b = this.lager.get(dachst);
@@ -26,13 +31,15 @@ public class Zimmerei
 			//Dachstuhl couldn't be finished, return all material.
 			if(b == null ) // && !this.dachst.isFinished 
 			{
-				//Return all the Bauholu
-				for (Bauholz r : this.lager.bauholzMaterial)
+				//Return all the Bauholz
+				for (Bauholz r : dachstList)
 				{
 					this.lager.add(r);
 				}
-				this.lager.bauholzLager = new LinkedList<Bauholz>();
+				dachst.getBauholzList().clear();
 			}
+
+			this.lager.add(b);
 
 		}
 
