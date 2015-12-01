@@ -24,7 +24,7 @@ public abstract class Dachstuhl {
 			preis += b.preis();
 		}
 		
-		System.out.println("Der Preis für diesen Dachstuhl beträgt " + preis + " cm");
+		System.out.println("Der Preis fuer diesen Dachstuhl betraegt " + preis + " cm");
 	}
 	
 	public void add(Bauholz b){
