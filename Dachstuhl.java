@@ -23,6 +23,7 @@ public abstract class Dachstuhl {
 		int holzCounter = 1;
 		for(Bauholz b : this.bauholzMaterial){
 			System.out.println("Laenge des "+holzCounter+".Holzstueckes: "+b.laenge());
+			++holzCounter;
 		}
 	}
 	
