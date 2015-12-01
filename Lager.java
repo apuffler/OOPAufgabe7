@@ -28,4 +28,8 @@ public class Lager {
 		}
 		return null;
 	}
+	
+	public LinkedList<Bauholz> getBauholzVorrat(){
+		return this.bauholzLager;
+	}
 }
