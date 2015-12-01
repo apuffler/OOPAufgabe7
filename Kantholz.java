@@ -2,11 +2,10 @@
 public abstract class Kantholz extends Bauholz{
 	protected int breite;
 	protected int hoehe;
+
+	//ASSERT: int laenge must be >= 0, int preis must be >= 0, int breite must be >= 0, int hoehe must be >= 0
 	public Kantholz(int laenge, int preis, int breite, int hoehe) {
 		super(laenge, preis);
-		if(breite <= 0 || hoehe <= 0){
-			throw new IllegalArgumentException("Width and Height must be greater than zero");
-		}
 		this.breite = breite;
 		this.hoehe = hoehe;
 	}

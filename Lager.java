@@ -7,6 +7,7 @@ public class Lager {
 		this.bauholzLager = new LinkedList<Bauholz>();
 	}
 	
+	//ASSERT: Bauholz bauholz must not be NULL!
 	public void add(Bauholz bauholz){
 		if(bauholz != null){
 			this.bauholzLager.add(bauholz);
@@ -20,6 +21,7 @@ public class Lager {
 		}
 	}
 	
+	//ASSERT: Dachstuhl stuhl must not be NULL!
 	public Bauholz get(Dachstuhl stuhl){
 		Bauholz suitableHolz = stuhl.getSuitableBauholz(this.bauholzLager);
 		if(suitableHolz != null){
