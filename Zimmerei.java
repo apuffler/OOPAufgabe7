@@ -51,7 +51,7 @@ public class Zimmerei
 				return false;
 			}
 
-			this.lager.add(b);
+			this.dachst.add(b);
 
 		}
 
